@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: mvn clean verify
-  deploy:
+  build:
     machine: true
     steps:
       - checkout
@@ -17,7 +17,10 @@ jobs:
       - run:
           name: Push to hub docker
           command: 'docker push taksan/apresentacao-circle-ci:latest'
-
+  deploy:
+    machine: true
+    steps:
+      - run: 'echo "deploying"'
 workflows:
   version: 2
   default_workflow:
