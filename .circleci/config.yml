@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: mvn clean verify
-  build:
+  deploy:
     machine: true
     steps:
       - checkout
