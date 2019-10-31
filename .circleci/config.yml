@@ -23,4 +23,11 @@ workflows:
   default_workflow:
     jobs:
       - test
-      - build
+      - build:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+
+
