@@ -10,11 +10,11 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: 'Login at hub docker'
+      - run:
           name: Login at hub docker
           command: 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
       - run: 'docker build . -t taksan/apresentacao-circle-ci:latest'
-      - run: 'Push to hub docker'
+      - run:
           name: Push to hub docker
           command: 'docker push taksan/apresentacao-circle-ci:latest'
 
