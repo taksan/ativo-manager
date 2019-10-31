@@ -29,3 +29,10 @@ workflows:
           filters:
             branches:
               only: master
+      - approve_deploy:
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - approve_deploy
