@@ -13,7 +13,7 @@ class AtivoTest {
 
     @Test void dadoUmNomeVazio_quandoInstanciarUmNovoAtivo_deveriaLancarExcecao(){
         assertThrows(NomeAtivoInvalido.class, () -> {
-           new Ativo("");
+           new Ativo("AA");
         });
     }
 
